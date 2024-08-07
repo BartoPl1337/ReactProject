@@ -1,12 +1,18 @@
-import { useState } from 'react'
-import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import MainPage from './Pages/MainPage'
+import PostPage from './Pages/PostPage'
+import ContactPage from './Pages/ContactPage'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-    </>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/post/:id" element={<PostPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+      </BrowserRouter>
   )
 }
 
